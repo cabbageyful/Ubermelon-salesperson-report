@@ -20,7 +20,12 @@ for line in f:
     line = line.split("|")    # creating a list out of each line in file
     salesperson, order_amount, melons_sold = line
 
-print line
+if salesperson in sales_data[keys]:
+    melons_sold += sales_data[salesperson]
+
+else:
+    sales_data[salesperson] = [order_amount, melons_sold]
+
                                  # it doesn't currently use the amount sold.
                                  # It's easy to add, I'll add it to my queue.
 
